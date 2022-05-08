@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using EShop.Infrastructure.Commands.Product;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
+namespace EShop.APIGateway.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ProductController : ControllerBase
+    {
+
+      [HttpGet]
+      public async Task<IActionResult> Get([FromForm] CreateProduct Product)
+      {
+         await Task.CompletedTask;
+         return Accepted("Get product method called");
+      }
+
+      [HttpPost]
+      public async Task<IActionResult> Add([FromForm] CreateProduct Product)
+      {
+         await Task.CompletedTask;
+         return Accepted("Product Created");
+      }
+    }
+}
