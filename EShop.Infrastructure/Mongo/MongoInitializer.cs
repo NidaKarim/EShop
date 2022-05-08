@@ -28,7 +28,6 @@ namespace EShop.Infrastructure.Mongo
            new CamelCaseElementNameConvention(),
            new EnumRepresentationConvention(MongoDB.Bson.BsonType.String)
 
-
          };
 
          ConventionRegistry.Register("EShop", convetion, c => true);

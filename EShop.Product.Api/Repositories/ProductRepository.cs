@@ -29,7 +29,7 @@ namespace EShop.Product.Api.Repositories
          var Product =  _collection.AsQueryable().Where(x => x.ProductId == ProductId).FirstOrDefault();
          if(Product == null)
          {
-            throw new Exception("Product not found");
+            throw new Exception("Product Not ound");
          }
          return new ProductCreated { ProductName = Product.ProductName, ProductID = Product.ProductId, CreatedDt = DateTime.Now };
 
