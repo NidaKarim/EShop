@@ -1,3 +1,4 @@
+using EShop.Infrastructure.EventBus;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -21,8 +22,8 @@ namespace EShop.APIGateway
       public void ConfigureServices(IServiceCollection services)
       {
 
-         services.AddControllersWithViews();
-
+         services.AddControllers();
+          services.AddRabbitMq(Configuration);
          // In production, the React files will be served from this directory
          services.AddSpaStaticFiles(configuration =>
          {
